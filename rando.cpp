@@ -56,7 +56,7 @@ int Rando::nearestToZero(int a, int b)
 	if (b==0)
 		return a;
 
-	if ( a>b ) // compare on absolute values
+	if ( a>b ) // compare
 		return b;
 	else
 		return a;
