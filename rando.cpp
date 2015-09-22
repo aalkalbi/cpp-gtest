@@ -1,4 +1,5 @@
-#include "rando.h"
+#include "rando.h" 
+#include <cmath>
 //#include <stdlib.h>
 
 
@@ -19,7 +20,10 @@ bool Rando::shouldWorry(bool childASmile, bool childBSmile, bool childCSmile)
 **/
 bool Rando::isDivisbleBy(int first, int second)
 {
-	return false;
+	if (first%second == 0 || second%first==0) // if first is divisible by second OR second is divisible by first
+		return true;
+	else
+		return false;
 }
 
 /**
@@ -29,7 +33,16 @@ bool Rando::isDivisbleBy(int first, int second)
 **/
 bool Rando::isPrime(int num)
 {
-	return true;
+	if (num<=1) // 0, 1 are not prime
+		return false;
+
+	for (int i=2; i<num; i++)
+	{
+		if (num%i == 0) // if we find an "i" number which divides "num", so "i" is another factor of "num" hence, it is not prime
+			return false;
+	}
+
+	return true; // if no other factor found, then the number is prime
 }
 
 /**
@@ -37,6 +50,14 @@ bool Rando::isPrime(int num)
  * that is closest to zero without actually being zero.
 **/
 int Rando::nearestToZero(int a, int b)
-{
-	return 0;
+ { 
+	if (a==0)
+		return b;
+	if (b==0)
+		return a;
+
+	if ( a>b ) // compare on absolute values
+		return b;
+	else
+		return a;
 }
