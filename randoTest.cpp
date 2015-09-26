@@ -36,7 +36,9 @@ TEST(RandoTest, numberDivisble)
 	ASSERT_TRUE( rando.isDivisbleBy(2,2) );
 	ASSERT_TRUE( rando.isDivisbleBy(4,2) );
 	ASSERT_TRUE( rando.isDivisbleBy(3,6) );
-	ASSERT_FALSE( rando.isDivisbleBy(5,7) );
+	ASSERT_FALSE( rando.isDivisbleBy(5,7) );  
+        ASSERT_TRUE( rando.isDivisbleBy(7, 0)); 
+ 
 }
 
 TEST(RandoTest, numberPrime)
@@ -53,7 +55,7 @@ TEST(RandoTest,nearestToZero)
 	Rando rando; 
 	ASSERT_TRUE( rando.nearestToZero(0, 7) );
 	ASSERT_TRUE( rando.nearestToZero(7, 7) );
-	ASSERT_TRUE( rando.nearestToZero(8, 7) );
+	ASSERT_TRUE( rando.nearestToZero(8, -7) );
 	ASSERT_TRUE( rando.nearestToZero(1, 5) );
 	ASSERT_TRUE( rando.nearestToZero(2, 3) );
 	ASSERT_TRUE( rando.nearestToZero(10, 1) );
